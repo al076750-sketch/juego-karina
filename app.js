@@ -414,7 +414,10 @@ function limpiarCanto() {
   paolaEl.style.display = 'none';
 }
 
-function usarClip(v) { return v.dataset.ok === 'si' && document.getElementById('verClips').checked; }
+function usarClip(v) {
+  return document.getElementById('verClips').checked &&
+         v.readyState >= 2;
+}
 
 function terminarIntro() {
   if (!introActiva) return;
